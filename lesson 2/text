@@ -1,0 +1,20 @@
+console.log(age);
+console.log(gender);
+
+var age = document.getElementById("aage").value;
+var gender = document.getElementById("ggender").value;
+
+window.alert(age);
+window.alert(gender);
+
+function shows() {
+  var name = document.getElementById("nname").value;
+  window.alert("hello" + name);
+  console.log(name);
+}
+
+function shows() {
+  var age = document.getElementById("aage").value;
+  window.alert("hello" + age);
+  console.log(age);
+}
