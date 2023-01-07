@@ -23,12 +23,12 @@
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   </head>
-  <body onload="hideText()">
+  <body>
     <main>
       <div class="container">
         <div class="row">
           <div class="col-lg-6 leftSide">
-          <h1>Hello Jesse Pinkman</h1>
+          <h1 id="greetings" >Hello Jesse Pinkman</h1>
           <p>
             See how exprerienced developers solve problems in real time.
             watching scripted tutorials is great, but understanding how
@@ -36,14 +36,17 @@
           </p>
           </div>
           <div class="col-lg-6 rightSide">
-            <div class="pop-up" id="pop"></div>
-            <form name="myform" onload="validation">
-              <input type="text" name="firstname" id="one" class="inputdesign" placeholder="First name"/><br>
-              <label for="" class="fst-italic"><code>firstname cannot be empty</code></label>
-              <input type="text" name="lastname" id="two" class="inputdesign" placeholder="Last name"/><br>
-              <input type="text" name="emailaddress" id="three" class="inputdesign" placeholder="Email Address"/><br>
-              <input type="password" name="password" id="four" class="inputdesign" placeholder="Password"/><br>
-              <button type="submit" class="submit" id="five">SUBMIT</button> <br>
+            <div class="pop-up" id="pop">sajghjg</div>
+            <form name="myform">
+              <input type="text" name="" id="one" class="inputdesign" placeholder="First name"/><br>
+              <label for="" id="firstname" class="fst-italic float-end errorText"></label>
+              <input type="text" name="" id="two" class="inputdesign" placeholder="Last name"/><br>
+              <label for="" id="lastname" class="fst-italic float-end errorText"></label>
+              <input type="text" name="" id="three" class="inputdesign" placeholder="Email Address"/><br>
+              <label for="" id="email" class="fst-italic float-end errorText"></label>
+              <input type="password" name="" id="four" class="inputdesign" placeholder="Password"/><br>
+              <label for="" id="password" class="fst-italic float-end errorText"></label>
+              <button type="submit" class="submit" id="five" onclick="validate()">SUBMIT</button> <br>
               <span>By clicking the button, you are agreeing to our <span style="color: hsl(0, 100%, 74%);">Terms & Services</span></span>
             </form>
           </div>
@@ -58,6 +61,52 @@
     crossorigin="anonymous"
   ></script>
   <script>
-    console.log("Hello Worldie");
+  function validate(){
+    var firstname = document.getElementById('one').value;
+    var lastname = document.getElementById('two').value;
+    var email = document.getElementById('three').value;
+    var password = document.getElementById('four').value;
+
+    if(firstname == "") {
+      document.getElementById('firstname').innerHTML = "First name can't be empty";
+    }
+
+    else if(firstname != ""){
+      document.getElementById('firstname').innerhtml = "";
+    }
+
+    if(lastname == "") {
+      document.getElementById('lastname').innerHTML = "Last name can't be empty";
+    }
+
+    else if(lastname != ""){
+      document.getElementById('lastname').innerhtml = "";
+    }
+
+    if(email == "") {
+      document.getElementById('email').innerHTML = "Enter your email address";
+    }
+
+    else if(email != ""){
+      document.getElementById('email').innerhtml = "";
+    }
+
+    if(password == "") {
+      document.getElementById('password').innerHTML = "Input your password";
+    }
+
+    else if(password != ""){
+      document.getElementById('password').innerhtml = "";
+    }
+
+    if(firstname == '' || lastname == '' || email == '' || password == ''){
+                document.getElementById('pop').innerHTML = 'Kindly Fill all the required'
+            } 
+            else if(firstname != '' && lastname != '' && email != '' && password != ''){
+                document.getElementById('pop').innerHTML = 'You are Good to Go'
+                document.getElementById('greetings').innerHTML = "Hello " + firstname
+}
+
+}
   </script>
 </html>
